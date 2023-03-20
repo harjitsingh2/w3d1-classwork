@@ -62,4 +62,18 @@ class Array
 
     end
 
+    def my_flatten
+        array = []
+        # condition 1: is the element an array?
+        self.each do |el|
+            if el.is_a?(Array) 
+                array += el.my_flatten 
+            else 
+                array << el 
+            end 
+        end 
+        array   
+
+    end 
+
 end 
