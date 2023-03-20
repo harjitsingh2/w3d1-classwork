@@ -38,4 +38,28 @@ class Array
         array 
     end 
 
+    def my_any?(&prc)
+
+        i = 0
+        while i < self.length
+            return true if prc.call(self[i])
+
+            i += 1
+        end
+        false
+
+    end
+
+    def my_all?(&prc)
+
+        i = 0
+        while i < self.length
+            return false if !prc.call(self[i])
+
+            i += 1
+        end
+        true
+
+    end
+
 end 
