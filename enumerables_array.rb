@@ -22,7 +22,20 @@ class Array
             i += 1
         end
         array
-
         
     end
+
+    def my_reject(&prc)
+        array = []
+        i = 0
+
+        while i < self.length 
+            if !prc.call(self[i])
+                array << self[i]
+            end 
+            i += 1
+        end 
+        array 
+    end 
+
 end 
