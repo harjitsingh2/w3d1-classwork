@@ -76,4 +76,17 @@ class Array
 
     end 
 
+    def my_zip(*array)
+        length = self.length
+        new_arr = []
+
+        array.each do |sub_array|
+            sub_array.each_with_index do |ele, i| 
+                new_arr << self[i]
+                new_arr << ele
+            end
+        end
+        new_arr
+    end
+
 end 
